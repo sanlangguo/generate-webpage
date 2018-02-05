@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="layout" content="main">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript" src="./script/jquery.min.js"></script>
+    <script type="text/javascript" src="./script/html2canvas.min.js"></script>
+
+</head>
+
+<body>
+
+
+    <div id="capture" style="padding: 10px; background: #f5da55">
+        <h4 style="color: #000; ">Hello world!</h4>
+        <img src="./image/3885730_124701000519_2.jpg" alt="./image/3885730_124701000519_2.jpg">
+    </div>
+
+
+    <script type="text/javascript">
+        html2canvas(document.querySelector("#capture")).then(
+            canvas => {
+                console.log(" == > canvas");
+                console.log(canvas);
+                console.log(" == > canvas.toDataURL");
+                console.log(canvas.toDataURL("image/png"));
+                // document.body.appendChild(canvas);
+                let image = canvas.toDataURL("image/png");
+                console.log(" ==> image");
+                console.log(image);
+            });
+    </script>
+</body>
+
+</html>
